@@ -9,10 +9,10 @@ int main(void)
 {
 	int ch;
 
-	for (ch = 97; ch <= 122; ch++)
-	{
+	for (ch = 'a'; ch <= 'z'; ch++)
 		putchar(ch);
-	}
-	putchar(10); /* this is an ascii code for new line*/
+	for (ch = 'A'; ch <= 'Z'; ch++)
+		putchar(ch);
+	putchar('\n');
 	return (0);
 }
