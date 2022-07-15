@@ -1,20 +1,35 @@
 #include "main.h"
 
 /**
- * reverse_array - reverses an array of integers
- * @a: array to be reversed
- * @n: number of elements in the array
+ * *_strspn - gets the length of a prefix substring
+ * @s: string to evaluate
+ * @accept: string containing the list of characters to match in s
+ *
+ * Return: the number of bytes in the initial segment
+ * of s which consist only of bytes from accept
  */
-void reverse_array(int *a, int n)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, tmp;
+	int i, j, f, flag;
 
-	j = n - 1;
+	f = 0;
 
-	for (i = 0; i < n / 2; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		tmp = a[i];
-		a[i] = a[j];
-		a[j--] = tmp;
+		flag = 0;
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				f++;
+				flag = 1;
+			}
+		}
+		if (flag == 0)
+		{
+			return (f);
+		}
 	}
+
+	return (0);
 }
